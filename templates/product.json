@@ -284,7 +284,7 @@
                       "settings": {
                         "heading": "Descripction",
                         "open_by_default": false,
-                        "icon": "eye",
+                        "icon": "none",
                         "width": 20
                       },
                       "blocks": {
@@ -323,7 +323,7 @@
                       "settings": {
                         "heading": "Shipping",
                         "open_by_default": false,
-                        "icon": "truck",
+                        "icon": "none",
                         "width": 20
                       },
                       "blocks": {
@@ -363,7 +363,7 @@
                       "settings": {
                         "heading": "Care Manuals",
                         "open_by_default": false,
-                        "icon": "washing",
+                        "icon": "none",
                         "width": 20
                       },
                       "blocks": {
@@ -437,7 +437,7 @@
                       "settings": {
                         "heading": "Manufacturing",
                         "open_by_default": false,
-                        "icon": "price_tag",
+                        "icon": "none",
                         "width": 20
                       },
                       "blocks": {
