@@ -1,0 +1,800 @@
+{% doc %}
+  @prompt
+    Create a reusable Shopify Block "Product Scale" in a single .liquid file. The section should display product attributes (like size, weight, durability, etc.) with visual rating bars. Make it fully configurable from the Shopify , use theme. Theme Editor with options to customize attribute names, scale values. Include schema settings for easy customization, use styles from section  theme editor., Add theme editore schema choice
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-scale-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    max-width: 100%;
+  }
+
+  .ai-product-scale-heading-{{ ai_gen_id }} {
+    margin:0 0 {{ block.settings.heading_margin }}px 0;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-product-scale-description-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.description_margin }}px 0;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-product-scale-attributes-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.attribute_spacing }}px;
+  }
+
+  .ai-product-scale-attribute-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-product-scale-attribute-header-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-product-scale-attribute-name-{{ ai_gen_id }} {
+    color: {{ block.settings.attribute_name_color }};
+    font-size: {{ block.settings.attribute_name_size }}px;
+    font-weight: {{ block.settings.attribute_name_weight }};
+    margin: 0;
+  }
+
+  .ai-product-scale-attribute-value-{{ ai_gen_id }} {
+    color: {{ block.settings.attribute_value_color }};
+    font-size: {{ block.settings.attribute_value_size }}px;
+    margin: 0;
+  }
+
+  .ai-product-scale-bar-container-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.bar_height }}px;
+    background-color: {{ block.settings.bar_background_color }};
+    border-radius: {{ block.settings.bar_border_radius }}px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ai-product-scale-bar-fill-{{ ai_gen_id }} {
+    height: 100%;
+    border-radius: {{ block.settings.bar_border_radius }}px;
+    transition: width 0.8s ease-out;
+    position: relative;
+  }
+
+  {% if block.settings.bar_style == 'solid' %}
+    .ai-product-scale-bar-fill-{{ ai_gen_id }} {
+      background-color: {{ block.settings.bar_fill_color }};
+    }
+  {% elsif block.settings.bar_style == 'gradient' %}
+    .ai-product-scale-bar-fill-{{ ai_gen_id }} {
+      background: linear-gradient(90deg, {{ block.settings.bar_gradient_start }}, {{ block.settings.bar_gradient_end }});
+    }
+  {% elsif block.settings.bar_style == 'striped' %}
+    .ai-product-scale-bar-fill-{{ ai_gen_id }} {
+      background-color: {{ block.settings.bar_fill_color }};
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        rgba(255, 255, 255, 0.2) 4px,
+        rgba(255, 255, 255, 0.2) 8px
+      );
+    }
+  {% endif %}
+
+  {% if block.settings.bar_animation == 'shine' %}
+    .ai-product-scale-bar-fill-{{ ai_gen_id }}::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    }
+  {% elsif block.settings.bar_animation == 'pulse' %}
+    .ai-product-scale-bar-fill-{{ ai_gen_id }} {
+      animation: ai-pulse-{{ ai_gen_id }} 2s ease-in-out infinite;
+    }
+    
+    @keyframes ai-pulse-{{ ai_gen_id }} {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+  {% endif %}
+
+  .ai-product-scale-scale-labels-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-size: {{ block.settings.scale_label_size }}px;
+    color: {{ block.settings.scale_label_color }};
+  }
+
+  {% if block.settings.show_scale_labels %}
+    .ai-product-scale-scale-labels-{{ ai_gen_id }} {
+      display: flex;}
+  {% else %}
+    .ai-product-scale-scale-labels-{{ ai_gen_id }} {
+      display: none;
+    }
+  {% endif %}
+
+  {% if block.settings.layout_style == 'compact' %}
+    .ai-product-scale-attribute-header-{{ ai_gen_id }} {
+      flex-direction: row;
+      align-items: center;
+    }
+    .ai-product-scale-attribute-{{ ai_gen_id }} {
+      gap: 4px;
+    }
+  {% elsif block.settings.layout_style == 'spacious' %}
+    .ai-product-scale-attribute-header-{{ ai_gen_id }} {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .ai-product-scale-attribute-{{ ai_gen_id }} {
+      gap: 12px;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-product-scale-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.75 }}px;
+    }
+
+    .ai-product-scale-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.9 }}px;
+    }
+
+    {% if block.settings.mobile_layout == 'stacked' %}
+      .ai-product-scale-attribute-header-{{ ai_gen_id }} {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+    {% endif %}
+  }
+{% endstyle %}<div class="ai-product-scale-{{ ai_gen_id }} color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}
+    <h3 class="ai-product-scale-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h3>
+  {% endif %}
+
+  {% if block.settings.description != blank %}
+    <div class="ai-product-scale-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+  {% endif %}
+
+  <div class="ai-product-scale-attributes-{{ ai_gen_id }}">
+    {% for i in (1..5) %}
+      {% liquid
+        assign attribute_name_key = 'attribute_' | append: i | append: '_name'
+        assign attribute_value_key = 'attribute_' | append: i | append: '_value'
+        assign attribute_max_key = 'attribute_' | append: i | append: '_max'
+        assign attribute_enabled_key = 'attribute_' | append: i | append: '_enabled'
+
+        assign attribute_name = block.settings[attribute_name_key]
+        assign attribute_value = block.settings[attribute_value_key]
+        assign attribute_max = block.settings[attribute_max_key]
+        assign attribute_enabled = block.settings[attribute_enabled_key]
+
+        assign percentage = attribute_value | times: 100.0 | divided_by: attribute_max%}
+
+      {% if attribute_enabled and attribute_name != blank %}
+        <div class="ai-product-scale-attribute-{{ ai_gen_id }}">
+          <div class="ai-product-scale-attribute-header-{{ ai_gen_id }}">
+            <h4 class="ai-product-scale-attribute-name-{{ ai_gen_id }}">{{ attribute_name }}</h4>
+            {% if block.settings.show_values %}
+              <span class="ai-product-scale-attribute-value-{{ ai_gen_id }}">
+                {% if block.settings.value_format == 'fraction' %}
+                  {{ attribute_value }}/{{ attribute_max }}
+                {% elsif block.settings.value_format == 'percentage' %}
+                  {{ percentage | round }}%
+                {% elsif block.settings.value_format == 'stars' %}
+                  {% for star in (1..attribute_max) %}
+                    {% if star <= attribute_value %}★{% else %}☆{% endif %}
+                  {% endfor %}
+                {% endif %}
+              </span>
+            {% endif %}
+          </div>
+          
+          <div class="ai-product-scale-bar-container-{{ ai_gen_id }}">
+            <div 
+              class="ai-product-scale-bar-fill-{{ ai_gen_id }}"
+              style="width: {{ percentage }}%;"
+            ></div>
+          </div>
+
+          {% if block.settings.show_scale_labels %}
+            <div class="ai-product-scale-scale-labels-{{ ai_gen_id }}">
+              <span>{{ block.settings.scale_min_label }}</span>
+              <span>{{ block.settings.scale_max_label }}</span></div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product scale",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product specifications"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>See how this product rates across key attributes</p>"
+    },
+    {
+      "type": "header",
+      "content": "Attribute1"
+    },
+    {
+      "type": "checkbox",
+      "id": "attribute_1_enabled",
+      "label": "Enable attribute 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "attribute_1_name",
+      "label": "Attribute name",
+      "default": "Durability"
+    },
+    {
+      "type": "range",
+      "id": "attribute_1_value",
+      "label": "Current value",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "attribute_1_max",
+      "label": "Maximum value",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Attribute 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "attribute_2_enabled",
+      "label": "Enable attribute 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "attribute_2_name",
+      "label": "Attribute name",
+      "default": "Comfort"
+    },
+    {
+      "type": "range",
+      "id": "attribute_2_value",
+      "label": "Current value",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "attribute_2_max",
+      "label": "Maximum value",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Attribute 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "attribute_3_enabled",
+      "label": "Enable attribute 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "attribute_3_name",
+      "label": "Attribute name",
+      "default": "Style"
+    },
+    {
+      "type": "range",
+      "id": "attribute_3_value",
+      "label": "Current value",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "attribute_3_max",
+      "label": "Maximum value",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Attribute 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "attribute_4_enabled",
+      "label": "Enable attribute 4",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "attribute_4_name",
+      "label": "Attribute name",
+      "default": "Weight"
+    },
+    {
+      "type": "range",
+      "id": "attribute_4_value",
+      "label": "Current value",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "attribute_4_max",
+      "label": "Maximum value",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Attribute 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "attribute_5_enabled",
+      "label": "Enable attribute 5",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "attribute_5_name",
+      "label": "Attribute name",
+      "default": "Value"
+    },
+    {
+      "type": "range",
+      "id": "attribute_5_value",
+      "label": "Current value",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "attribute_5_max",
+      "label": "Maximum value",
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Display options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_values",
+      "label": "Show attribute values",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "value_format",
+      "label": "Value format",
+      "options": [
+        {
+          "value": "fraction",
+          "label": "Fraction (8/10)"
+        },
+        {
+          "value": "percentage",
+          "label": "Percentage (80%)"
+        },
+        {
+          "value": "stars",
+          "label": "Stars (★★★★☆)"
+        }
+      ],
+      "default": "fraction"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scale_labels",
+      "label": "Show scale labels",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "scale_min_label",
+      "label": "Minimum label",
+      "default": "Low"
+    },
+    {
+      "type": "text",
+      "id": "scale_max_label",
+      "label": "Maximum label",
+      "default": "High"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "compact",
+          "label": "Compact"
+        },
+        {
+          "value": "spacious",
+          "label": "Spacious"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "stacked",
+          "label": "Stacked"
+        }
+      ],
+      "default": "stacked"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "attribute_spacing",
+      "label": "Spacing between attributes",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "attribute_name_color",
+      "label": "Attribute name color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "attribute_value_color",
+      "label": "Attribute value color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "scale_label_color",
+      "label": "Scale label color",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Bar style"
+    },
+    {
+      "type": "select",
+      "id": "bar_style",
+      "label": "Bar style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "striped",
+          "label": "Striped"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "bar_background_color",
+      "label": "Bar background color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "bar_fill_color",
+      "label": "Bar fill color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "bar_gradient_start",
+      "label": "Gradient start color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "bar_gradient_end",
+      "label": "Gradient end color",
+      "default": "#00d4ff"
+    },
+    {
+      "type": "select",
+      "id": "bar_animation",
+      "label": "Bar animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "shine",
+          "label": "Shine effect"
+        },
+        {
+          "value": "pulse",
+          "label": "Pulse effect"
+        }
+      ],
+      "default": "shine"
+    },
+    {
+      "type": "range",
+      "id": "bar_height",
+      "label": "Bar height",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "bar_border_radius",
+      "label": "Bar border radius",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_margin",
+      "label": "Heading bottom margin",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_margin",
+      "label": "Description bottom margin",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "attribute_name_size",
+      "label": "Attribute name size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "attribute_name_weight",
+      "label": "Attribute name weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "attribute_value_size",
+      "label": "Attribute value size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "scale_label_size",
+      "label": "Scale label size",
+      "min": 10,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product scale"
+    }
+  ]
+}
+{% endschema %}
