@@ -833,7 +833,7 @@
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
-                    "custom_liquid": "{{ product.metafields.printful_product.material_spec | metafield_tag }}"
+                    "custom_liquid": "{% comment %} \n  Step 1: Assign the metaobject entry to a variable.\n  Replace 'product.metafields.custom.your_metafield_name' with the actual\n  name of the metafield on your product that references the metaobject.\n{% endcomment %}\n{% assign product_data = product.metafields.custom.product_details %}\n\n{% comment %} \n  Step 2: Check if the metaobject exists on the current product.\n{% endcomment %}\n{% if product_data != blank %}\n\n  {% comment %} \n    Step 3: Display the material_spec field from the metaobject.\n    The syntax is 'variable.field_name'.\n  {% endcomment %}\n  <div>\n    <h4>Material Specifications:</h4>\n    {{ product_data.material_spec | metafield_tag }}\n  </div>\n\n{% endif %}"
                   },
                   "blocks": {}
                 }
