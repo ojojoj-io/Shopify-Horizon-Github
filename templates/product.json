@@ -160,92 +160,6 @@
                 "price_tVjtKg"
               ]
             },
-            "popup_link_qA8LUK": {
-              "type": "popup-link",
-              "name": "t:names.popup_link",
-              "settings": {
-                "behavior": "default",
-                "heading": "Learn more",
-                "type_preset": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "page_4HwLHn": {
-                  "type": "page",
-                  "name": "t:names.page",
-                  "settings": {
-                    "page": "{{ closest.product.metafields.custom.printful_product.value.care_manuals2.value }}",
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_nQJ6Fi": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h2>What is the return policy?</h2>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 16,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_mB6mwg": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn’t the case, let us know and we’ll do our best to work with you to make it right.</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "page_4HwLHn",
-                "text_nQJ6Fi",
-                "text_mB6mwg"
-              ]
-            },
             "divider_VJhene": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -477,10 +391,45 @@
                             "padding-inline-end": 0
                           },
                           "blocks": {}
+                        },
+                        "popup_link_dACNiA": {
+                          "type": "popup-link",
+                          "name": "t:names.popup_link",
+                          "settings": {
+                            "behavior": "drawer",
+                            "heading": "Learn more",
+                            "type_preset": "",
+                            "padding-block-start": 0,
+                            "padding-block-end": 10,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {
+                            "page_wLmhd6": {
+                              "type": "page",
+                              "name": "t:names.page",
+                              "settings": {
+                                "page": "",
+                                "inherit_color_scheme": true,
+                                "color_scheme": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "padding-block-start": 0,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "page_wLmhd6"
+                          ]
                         }
                       },
                       "block_order": [
-                        "text_yKVqbi"
+                        "text_yKVqbi",
+                        "popup_link_dACNiA"
                       ]
                     },
                     "accordion_row_LtiUTJ": {
@@ -538,7 +487,6 @@
           },
           "block_order": [
             "group_icgrde",
-            "popup_link_qA8LUK",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
