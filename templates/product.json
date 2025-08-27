@@ -396,7 +396,7 @@
                           "type": "popup-link",
                           "name": "t:names.popup_link",
                           "settings": {
-                            "behavior": "drawer",
+                            "behavior": "default",
                             "heading": "Learn more",
                             "type_preset": "",
                             "padding-block-start": 0,
@@ -409,7 +409,7 @@
                               "type": "page",
                               "name": "t:names.page",
                               "settings": {
-                                "page": "",
+                                "page": "{{ closest.product.metafields.custom.printful_product.value.care_manuals2.value }}",
                                 "inherit_color_scheme": true,
                                 "color_scheme": "",
                                 "background": false,
