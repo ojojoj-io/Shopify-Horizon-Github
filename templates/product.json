@@ -644,10 +644,22 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "custom_liquid_BiNQgK": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  ** Renders product specs from a single JSON metafield **\n  - Metafield required: custom.product_specs_json (Type: JSON)\n{% endcomment %}\n\n<style>\n  .custom-details-container {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 30px;\n    padding: 20px 0;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\n    border-top: 1px solid #e5e5e5;\n    border-bottom: 1px solid #e5e5e5;\n    margin: 20px 0;\n  }\n  .details-column {\n    display: flex;\n    flex-direction: column;\n    gap: 15px;\n  }\n  .column-header {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n  .column-header .icon img {\n    width: 24px;\n    height: 24px;\n  }\n  .column-header h3 {\n    margin: 0;\n    font-size: 1.1em;\n    font-weight: 600;\n  }\n  .detail-item {\n    margin-bottom: 15px;\n  }\n  .detail-item strong {\n    display: block;\n    margin-bottom: 4px;\n    font-weight: 600;\n    color: #333;\n  }\n  .detail-item p {\n    color: #555;\n    font-size: 0.95em;\n    margin: 0;\n  }\n</style>\n\n{%- comment %} Get the JSON data from the metafield {%- endcomment -%}\n{%- assign specs_data = product.metafields.custom.product_specs_json.value -%}\n\n{%- if specs_data -%}\n  <div class=\"custom-details-container\">\n    {%- comment %} Loop through each object in the JSON array to create a column {%- endcomment -%}\n    {%- for column in specs_data -%}\n      <div class=\"details-column\">\n        <div class=\"column-header\">\n          <div class=\"icon\">\n            <img src=\"{{ column['pf-d-flex src'] }}\" alt=\"{{ column['pf-h4'] }} icon\" width=\"24\" height=\"24\">\n          </div>\n          <h3>{{ column['pf-h4'] }}</h3>\n        </div>\n\n        <div class=\"column-content\">\n          {%- if column['pf-h5'] -%}\n            <div class=\"detail-item\">\n              <strong>{{ column['pf-h5'] }}</strong>\n              {%- comment %} The description is matched with the first pf-h5 item {%- endcomment -%}\n              {%- if column['pf-ui-body (12)'] -%}\n                <p>{{ column['pf-ui-body (12)'] }}</p>\n              {%- endif -%}\n            </div>\n          {%- endif -%}\n\n          {%- comment %} Display the second pf-h5 item if it exists {%- endcomment -%}\n          {%- if column['pf-h5 (2)'] -%}\n            <div class=\"detail-item\">\n              <strong>{{ column['pf-h5 (2)'] }}</strong>\n            </div>\n          {%- endif -%}\n        </div>\n      </div>\n    {%- endfor -%}\n  </div>\n{%- endif -%}",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "custom_liquid_BiNQgK"
   ]
 }
