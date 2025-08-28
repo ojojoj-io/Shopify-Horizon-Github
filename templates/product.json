@@ -367,24 +367,15 @@
                         "width": 20
                       },
                       "blocks": {
-                        "text_yKVqbi": {
-                          "type": "text",
+                        "page_LbpDdD": {
+                          "type": "page",
+                          "name": "t:names.page",
                           "settings": {
-                            "text": "{{ closest.product.metafields.custom.printful_product.value.care_manuals | metafield_tag }}",
-                            "width": "100%",
-                            "max_width": "normal",
-                            "alignment": "left",
-                            "type_preset": "rte",
-                            "font": "var(--font-body--family)",
-                            "font_size": "1rem",
-                            "line_height": "normal",
-                            "letter_spacing": "normal",
-                            "case": "none",
-                            "wrap": "pretty",
-                            "color": "var(--color-foreground)",
+                            "page": "washing-manual-popup",
+                            "inherit_color_scheme": true,
+                            "color_scheme": "",
                             "background": false,
                             "background_color": "#00000026",
-                            "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
                             "padding-inline-start": 0,
@@ -428,7 +419,7 @@
                         }
                       },
                       "block_order": [
-                        "text_yKVqbi",
+                        "page_LbpDdD",
                         "popup_link_dACNiA"
                       ]
                     },
