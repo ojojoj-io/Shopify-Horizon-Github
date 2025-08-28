@@ -371,7 +371,7 @@
                           "type": "text",
                           "name": "t:names.text",
                           "settings": {
-                            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                            "text": "<p>This gift card is valid for 12 months from the date of purchase.<br/><br/>It can be used to purchase any product on deemflywear.com.<br/><br/>The card's value can be used across one or multiple orders until the balance reaches zero.<br/><br/>Gift cards are non-refundable and cannot be exchanged for cash.<br/><br/>Any unused balance on the card will not be refunded or credited after the expiration date.<br/><br/>Deem Flywear is not responsible for lost or stolen gift card codes.</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "left",
