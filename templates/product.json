@@ -327,24 +327,15 @@
                         "width": 20
                       },
                       "blocks": {
-                        "text_ztmMiQ": {
-                          "type": "text",
+                        "page_HxnpdW": {
+                          "type": "page",
+                          "name": "t:names.page",
                           "settings": {
-                            "text": "{{ closest.product.metafields.custom.printful_product.value.shipping_returns | metafield_tag }}",
-                            "width": "100%",
-                            "max_width": "normal",
-                            "alignment": "left",
-                            "type_preset": "rte",
-                            "font": "var(--font-body--family)",
-                            "font_size": "1rem",
-                            "line_height": "normal",
-                            "letter_spacing": "normal",
-                            "case": "none",
-                            "wrap": "pretty",
-                            "color": "var(--color-foreground)",
+                            "page": "{{ closest.product.metafields.custom.printful_product.value.shipping_returns.value }}",
+                            "inherit_color_scheme": true,
+                            "color_scheme": "",
                             "background": false,
                             "background_color": "#00000026",
-                            "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
                             "padding-inline-start": 0,
@@ -354,7 +345,7 @@
                         }
                       },
                       "block_order": [
-                        "text_ztmMiQ"
+                        "page_HxnpdW"
                       ]
                     },
                     "accordion_row_9NQdFQ": {
@@ -371,7 +362,7 @@
                           "type": "page",
                           "name": "t:names.page",
                           "settings": {
-                            "page": "{{ closest.product.metafields.custom.printful_product.value.care_manuals2.value }}",
+                            "page": "",
                             "inherit_color_scheme": true,
                             "color_scheme": "",
                             "background": false,
@@ -382,45 +373,10 @@
                             "padding-inline-end": 0
                           },
                           "blocks": {}
-                        },
-                        "popup_link_dACNiA": {
-                          "type": "popup-link",
-                          "name": "t:names.popup_link",
-                          "settings": {
-                            "behavior": "default",
-                            "heading": "Learn more",
-                            "type_preset": "",
-                            "padding-block-start": 40,
-                            "padding-block-end": 10,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
-                          },
-                          "blocks": {
-                            "page_wLmhd6": {
-                              "type": "page",
-                              "name": "t:names.page",
-                              "settings": {
-                                "page": "{{ closest.product.metafields.custom.printful_product.value.care_manuals2.value }}",
-                                "inherit_color_scheme": true,
-                                "color_scheme": "",
-                                "background": false,
-                                "background_color": "#00000026",
-                                "padding-block-start": 0,
-                                "padding-block-end": 0,
-                                "padding-inline-start": 0,
-                                "padding-inline-end": 0
-                              },
-                              "blocks": {}
-                            }
-                          },
-                          "block_order": [
-                            "page_wLmhd6"
-                          ]
                         }
                       },
                       "block_order": [
-                        "page_dNdaqx",
-                        "popup_link_dACNiA"
+                        "page_dNdaqx"
                       ]
                     },
                     "accordion_row_LtiUTJ": {
@@ -855,14 +811,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "custom_liquid_nTCweg": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
-                  "settings": {
-                    "custom_liquid": "{% assign metaobject_handle = 'printful_product' %}\n{% assign metaobject_entry = shop.metaobjects[metaobject_handle]['printful_product.name'] %}\n<div class=\"metaobject-content\">\n  <h2>{{ metaobject_entry.title.value }}</h2>\n  <div>{{ metaobject_entry.content.value }}</div>\n</div>"
-                  },
-                  "blocks": {}
-                },
                 "page_ERx49L": {
                   "type": "page",
                   "name": "t:names.page",
@@ -881,7 +829,6 @@
                 }
               },
               "block_order": [
-                "custom_liquid_nTCweg",
                 "page_ERx49L"
               ]
             }
