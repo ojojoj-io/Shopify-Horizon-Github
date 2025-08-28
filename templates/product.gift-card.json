@@ -17,7 +17,7 @@
           "static": true,
           "settings": {
             "media_presentation": "grid",
-            "media_columns": "two",
+            "media_columns": "one",
             "image_gap": 4,
             "large_first_image": false,
             "icons_style": "none",
@@ -560,7 +560,7 @@
         "carousel_on_mobile": false,
         "max_products": 4,
         "columns": 4,
-        "mobile_columns": "2",
+        "mobile_columns": "1",
         "columns_gap": 12,
         "rows_gap": 24,
         "icons_style": "arrow",
