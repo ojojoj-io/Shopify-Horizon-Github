@@ -373,10 +373,71 @@
                             "padding-inline-end": 0
                           },
                           "blocks": {}
+                        },
+                        "popup_link_4ndXMM": {
+                          "type": "popup-link",
+                          "name": "t:names.popup_link",
+                          "settings": {
+                            "behavior": "default",
+                            "heading": "Learn more",
+                            "type_preset": "",
+                            "padding-block-start": 27,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {
+                            "text_MQPRBq": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<h2>What is the return policy?</h2>",
+                                "width": "fit-content",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "rte",
+                                "font": "var(--font-body--family)",
+                                "font_size": "1rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "color": "var(--color-foreground)",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 24,
+                                "padding-block-end": 16,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            },
+                            "page_JbEWcm": {
+                              "type": "page",
+                              "name": "t:names.page",
+                              "settings": {
+                                "page": "care-manual",
+                                "inherit_color_scheme": true,
+                                "color_scheme": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "padding-block-start": 0,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "text_MQPRBq",
+                            "page_JbEWcm"
+                          ]
                         }
                       },
                       "block_order": [
-                        "page_dNdaqx"
+                        "page_dNdaqx",
+                        "popup_link_4ndXMM"
                       ]
                     },
                     "accordion_row_LtiUTJ": {
