@@ -331,7 +331,7 @@
                           "type": "text",
                           "name": "t:names.text",
                           "settings": {
-                            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                            "text": "<p>How to Use Your Gift Card<br/>Using your Deem Flywear gift card is simple and fast.<br/><br/>Add Products to Your Cart: Browse our collection and add all your desired gear to your shopping cart.<br/><br/>Proceed to Checkout: When you're ready to complete your order, head to your cart.<br/><br/>Enter the Code: In the field labeled \"Gift card or discount code,\" enter the unique code you received in your email.<br/><br/>Apply: Click \"Apply.\" The gift card's value will be automatically deducted from your order total.<br/><br/>If your order total is more than the gift card's value, you can easily pay the remaining balance with another payment method.</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "left",
