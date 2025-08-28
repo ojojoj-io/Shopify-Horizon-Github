@@ -388,24 +388,15 @@
                         "width": 20
                       },
                       "blocks": {
-                        "text_AJi9D8": {
-                          "type": "text",
+                        "page_QepAFp": {
+                          "type": "page",
+                          "name": "t:names.page",
                           "settings": {
-                            "text": "{{ closest.product.metafields.custom.printful_product.value.manufacturing_specs | metafield_tag }}",
-                            "width": "100%",
-                            "max_width": "normal",
-                            "alignment": "left",
-                            "type_preset": "rte",
-                            "font": "var(--font-body--family)",
-                            "font_size": "1rem",
-                            "line_height": "normal",
-                            "letter_spacing": "normal",
-                            "case": "none",
-                            "wrap": "pretty",
-                            "color": "var(--color-foreground)",
+                            "page": "{{ closest.product.metafields.custom.printful_product.value.manufacturing_specs.value }}",
+                            "inherit_color_scheme": true,
+                            "color_scheme": "",
                             "background": false,
                             "background_color": "#00000026",
-                            "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
                             "padding-inline-start": 0,
@@ -415,7 +406,7 @@
                         }
                       },
                       "block_order": [
-                        "text_AJi9D8"
+                        "page_QepAFp"
                       ]
                     }
                   },
