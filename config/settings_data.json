@@ -120,18 +120,18 @@
         "disabled": false,
         "settings": {}
       },
-      "10148494829067693542": {
-        "type": "shopify://apps/xo-insert-code/blocks/insert-code-body/72017b12-3679-442e-b23c-5c62460717f5",
-        "disabled": false,
+      "13392549970259155148": {
+        "type": "shopify://apps/xo-insert-code/blocks/insert-code-header/72017b12-3679-442e-b23c-5c62460717f5",
+        "disabled": true,
         "settings": {
-          "custom_liquid": "<div data-v-303bf58f=\"\" class=\"product-specs__item\" style=\"width: 25%; display: inline-block;\"><div data-v-303bf58f=\"\" class=\"pf-d-flex pf-border-bottom pf-border-light pf-pb-4 pf-mb-16\"><img data-v-303bf58f=\"\" src=\"https://static.cdn.printful.com/static/v876/images/products-catalog/product-specs/style_and_fit.svg?v=2\" height=\"48\"> <h4 data-v-303bf58f=\"\" class=\"pf-h4 pf-ml-8\">Style and fit</h4></div> <div data-v-303bf58f=\"\"><div data-v-303bf58f=\"\"><div data-v-303bf58f=\"\" class=\"pf-mb-12\"><h5 data-v-303bf58f=\"\" class=\"pf-h5 pf-mb-4\">Regular fit</h5> <p data-v-303bf58f=\"\" class=\"pf-ui-body\">Standard length, the fabric easily gives into movement</p></div><div data-v-303bf58f=\"\" class=\"pf-mb-12\"><h5 data-v-303bf58f=\"\" class=\"pf-h5 pf-mb-4\">Side-seamed</h5> <p data-v-303bf58f=\"\" class=\"pf-ui-body\">Constructed by sewing two parts together, creating a fitted look</p></div> <!----></div></div></div>",
+          "custom_liquid": "",
           "custom_css": "",
           "custom_js": ""
         }
       },
-      "13392549970259155148": {
-        "type": "shopify://apps/xo-insert-code/blocks/insert-code-header/72017b12-3679-442e-b23c-5c62460717f5",
-        "disabled": false,
+      "10148494829067693542": {
+        "type": "shopify://apps/xo-insert-code/blocks/insert-code-body/72017b12-3679-442e-b23c-5c62460717f5",
+        "disabled": true,
         "settings": {
           "custom_liquid": "",
           "custom_css": "",
