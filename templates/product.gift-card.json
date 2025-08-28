@@ -291,7 +291,7 @@
                         "text_TazCfh": {
                           "type": "text",
                           "settings": {
-                            "text": "{{ closest.product.metafields.custom.printful_product.value.descripction | metafield_tag }}",
+                            "text": "{{ closest.product.description }}",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "left",
