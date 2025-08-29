@@ -84,7 +84,7 @@
     "section_pFPWFt": {
       "type": "section",
       "blocks": {
-        "group_wRgRYa": {
+        "group_t6GcVK": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -95,14 +95,14 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
             "gap": 12,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -124,35 +124,35 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_NEt3zd": {
-              "type": "icon",
-              "name": "t:names.icon",
+            "image_dRfh9g": {
+              "type": "image",
+              "name": "t:names.image",
               "settings": {
-                "icon": "price_tag",
-                "width": 24,
+                "image": "shopify://shop_images/Thez_trusted_us.png",
                 "link": "",
-                "open_in_new_tab": false
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "icon_NEt3zd"
+            "image_dRfh9g"
           ]
         },
-        "icon_d3ndgk": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/Thez_trusted_us.png",
-            "width": 70,
-            "link": "",
-            "open_in_new_tab": true
-          },
-          "blocks": {}
-        },
-        "group_t6GcVK": {
+        "group_kppfFG": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -163,14 +163,14 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
             "gap": 12,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -191,19 +191,34 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
-        },
-        "icon_ykdXEh": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/Thez-trusted-us_0003_Zrzut-ekranu-2023-04-12-o-13.28.47.png",
-            "width": 40,
-            "link": "",
-            "open_in_new_tab": false
+          "blocks": {
+            "image_yWWEpK": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/Thez-trusted-us_0003_Zrzut-ekranu-2023-04-12-o-13.28.47.png",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
           },
-          "blocks": {}
+          "block_order": [
+            "image_yWWEpK"
+          ]
         },
         "icon_6JhVyK": {
           "type": "icon",
@@ -291,10 +306,8 @@
         }
       },
       "block_order": [
-        "group_wRgRYa",
-        "icon_d3ndgk",
         "group_t6GcVK",
-        "icon_ykdXEh",
+        "group_kppfFG",
         "icon_6JhVyK",
         "icon_KyLTJh",
         "icon_ytVgDi",
