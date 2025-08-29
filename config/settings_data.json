@@ -116,15 +116,6 @@
           "custom_liquid_js": ""
         }
       },
-      "10148494829067693542": {
-        "type": "shopify://apps/xo-insert-code/blocks/insert-code-body/72017b12-3679-442e-b23c-5c62460717f5",
-        "disabled": true,
-        "settings": {
-          "custom_liquid": "",
-          "custom_css": "",
-          "custom_js": ""
-        }
-      },
       "13392549970259155148": {
         "type": "shopify://apps/xo-insert-code/blocks/insert-code-header/72017b12-3679-442e-b23c-5c62460717f5",
         "disabled": true,
@@ -138,6 +129,15 @@
         "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
         "disabled": false,
         "settings": {}
+      },
+      "10148494829067693542": {
+        "type": "shopify://apps/xo-insert-code/blocks/insert-code-body/72017b12-3679-442e-b23c-5c62460717f5",
+        "disabled": false,
+        "settings": {
+          "custom_liquid": "",
+          "custom_css": ".se-option-name {\n\tfont-size: var(--se-option-name-font_size);\n\tdisplay:none;\n}",
+          "custom_js": ""
+        }
       }
     },
     "color_schemes": {
