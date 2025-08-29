@@ -12,6 +12,10 @@
     "main": {
       "type": "product-information",
       "blocks": {
+        "optis_color_swatch_se_product_variant_dwKqUc": {
+          "type": "shopify://apps/optis-color-swatch/blocks/se-product-variant/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
+          "settings": {}
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -421,6 +425,9 @@
           ]
         }
       },
+      "block_order": [
+        "optis_color_swatch_se_product_variant_dwKqUc"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
