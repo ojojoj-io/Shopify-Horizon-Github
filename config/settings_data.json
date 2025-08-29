@@ -126,18 +126,18 @@
           "custom_js": ""
         }
       },
+      "9741741230116411038": {
+        "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
+        "disabled": true,
+        "settings": {}
+      },
       "8315608621410374781": {
         "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "custom_liquid_css": "",
           "custom_liquid_js": ""
         }
-      },
-      "9741741230116411038": {
-        "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
