@@ -116,11 +116,6 @@
           "custom_liquid_js": ""
         }
       },
-      "9741741230116411038": {
-        "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
-        "disabled": false,
-        "settings": {}
-      },
       "10148494829067693542": {
         "type": "shopify://apps/xo-insert-code/blocks/insert-code-body/72017b12-3679-442e-b23c-5c62460717f5",
         "disabled": true,
@@ -138,6 +133,11 @@
           "custom_css": "",
           "custom_js": ""
         }
+      },
+      "9741741230116411038": {
+        "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
