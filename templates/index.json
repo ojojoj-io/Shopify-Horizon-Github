@@ -319,17 +319,9 @@
       "settings": {
         "collection_list": [
           "women-tops",
-          "mens",
-          "hoodies",
-          "leggings",
-          "stickers",
-          "t-shirts-1",
           "bags-backpacks",
-          "socks",
           "beanies",
-          "420",
-          "jackets-vests",
-          "pants-shorts"
+          "420"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
