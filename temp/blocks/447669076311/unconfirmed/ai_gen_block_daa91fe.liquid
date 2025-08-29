@@ -1,6 +1,465 @@
+{% doc %}
+  @prompt
+    A holographic card to disaly
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-holographic-card-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    max-width: {{ block.settings.card_width }}px;
+    height: {{ block.settings.card_height }}px;
+    margin: 0 auto;
+    perspective: 1000px;
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    background: {{ block.settings.background_color }};
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-holographic-card__inner-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      {{ block.settings.gradient_color_1 }},
+      {{ block.settings.gradient_color_2 }},
+      {{ block.settings.gradient_color_3 }}
+    );
+  }
+
+  .ai-holographic-card__holographic-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    opacity: {{ block.settings.holographic_intensity | divided_by: 100.0 }};
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .ai-holographic-card-{{ ai_gen_id }}:hover .ai-holographic-card__holographic-overlay-{{ ai_gen_id }} {
+    background-position: 100% 100%;
+  }
+
+  .ai-holographic-card__shimmer-{{ ai_gen_id }} {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  .ai-holographic-card-{{ ai_gen_id }}:hover .ai-holographic-card__shimmer-{{ ai_gen_id }} {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+  }
+
+  .ai-holographic-card__content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    padding: {{ block.settings.content_padding }}px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-holographic-card__image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .ai-holographic-card__image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-holographic-card__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-holographic-card__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.6;
+  }
+
+  .ai-holographic-card__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-holographic-card__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-holographic-card__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-holographic-card__rainbow-border-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: {{ block.settings.border_radius }}px;
+    background: linear-gradient(
+      45deg,
+      #ff0080,
+      #ff8c00,
+      #40e0d0,
+      #ff0080
+    );
+    background-size: 400% 400%;
+    padding: 2px;
+    z-index: -1;
+  }
+
+  .ai-holographic-card-{{ ai_gen_id }}:hover .ai-holographic-card__rainbow-border-{{ ai_gen_id }} {
+    animation: ai-holographic-card-rainbow-{{ ai_gen_id }} 2s ease infinite;
+  }
+
+  @keyframes ai-holographic-card-rainbow-{{ ai_gen_id }} {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-holographic-card-{{ ai_gen_id }} {
+      max-width: 100%;
+      height: {{ block.settings.card_height | times: 0.8 }}px;
+    }
+
+    .ai-holographic-card__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding | times: 0.7 }}px;
+    }
+
+    .ai-holographic-card__image-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size | times: 0.8 }}px;
+      height: {{ block.settings.image_size | times: 0.8 }}px;
+    }
+
+    .ai-holographic-card__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-holographic-card__description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<holographic-card-{{ ai_gen_id }}
+  class="ai-holographic-card-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_rainbow_border %}
+    <div class="ai-holographic-card__rainbow-border-{{ ai_gen_id }}"></div>
+  {% endif %}
+
+  <div class="ai-holographic-card__inner-{{ ai_gen_id }}">
+    <div class="ai-holographic-card__holographic-overlay-{{ ai_gen_id }}"></div>
+    <div class="ai-holographic-card__shimmer-{{ ai_gen_id }}"></div>
+
+    <div class="ai-holographic-card__content-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <div class="ai-holographic-card__image-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.image | image_url: width: 200 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="200"
+            height="200"
+          >
+        </div>
+      {% else %}
+        <div class="ai-holographic-card__image-{{ ai_gen_id }}">
+          <div class="ai-holographic-card__image-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+            <div class="ai-holographic-card__empty-state-{{ ai_gen_id }}">
+              Add an image
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.title != blank %}
+        <h3 class="ai-holographic-card__title-{{ ai_gen_id }}">
+          {{ block.settings.title }}
+        </h3>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="ai-holographic-card__description-{{ ai_gen_id }}">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</holographic-card-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HolographicCard{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupHolographicEffect();
+      }
+
+      setupHolographicEffect() {
+        const card = this;
+        const overlay = this.querySelector('.ai-holographic-card__holographic-overlay-{{ ai_gen_id }}');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          
+          const gradientX = (x / rect.width) * 100;
+          const gradientY = (y / rect.height) * 100;
+          
+          overlay.style.background = `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(255,255,255,0.3) 0%, transparent 50%)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          overlay.style.background = 'linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%)';
+        });
+      }
+    }
+
+    customElements.define('holographic-card-{{ ai_gen_id }}', HolographicCard{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Holographic card",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Holographic Display"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Experience the future with our stunning holographic technology"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "min": 200,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Card width",
+      "default": 350
+    },
+    {
+      "type": "range",
+      "id": "card_height",
+      "min": 200,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Card height",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Content padding",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rainbow_border",
+      "label": "Show rainbow border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1a1a2e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1",
+      "default": "#667eea"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2",
+      "default": "#764ba2"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_3",
+      "label": "Gradient color 3",
+      "default": "#f093fb"
+    },
+    {
+      "type": "header",
+      "content": "Holographic effect"
+    },
+    {
+      "type": "range",
+      "id": "holographic_intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Holographic intensity",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 50,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Image size",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holographic card"
+    }
+  ]
+}
 {% endschema %}
