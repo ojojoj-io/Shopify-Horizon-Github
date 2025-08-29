@@ -565,7 +565,7 @@
               "type": "text",
               "name": "Description",
               "settings": {
-                "text": "<p>We're always with you: guaranteeing our dedicated customers are ecstatic is our fundamental purpose.</p>",
+                "text": "<p>📢 Drop us a message 📢</p>",
                 "width": "100%",
                 "max_width": "narrow",
                 "alignment": "center",
