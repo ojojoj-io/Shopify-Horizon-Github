@@ -81,12 +81,12 @@
         "padding-block-end": 72
       }
     },
-    "section_pFPWFt": {
-      "type": "section",
+    "collection_list_g8GDzg": {
+      "type": "collection-list",
       "blocks": {
-        "group_t6GcVK": {
+        "group_zLUzAy": {
           "type": "group",
-          "name": "t:names.group",
+          "name": "t:names.header",
           "settings": {
             "link": "",
             "open_in_new_tab": false,
@@ -98,11 +98,11 @@
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "fit-content",
+            "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fill",
+            "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -124,22 +124,151 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_YPKfhM": {
-              "type": "icon",
-              "name": "t:names.icon",
+            "text_YBBQDE": {
+              "type": "text",
+              "name": "t:names.text",
               "settings": {
-                "icon": "price_tag",
-                "image_upload": "shopify://shop_images/Thez_trusted_us.png",
-                "width": 24,
-                "link": "",
-                "open_in_new_tab": false
+                "text": "<h3>Shop by collection</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "icon_YPKfhM"
+            "text_YBBQDE"
           ]
+        },
+        "static-collection-card": {
+          "type": "_collection-card",
+          "name": "t:names.collection_card",
+          "static": true,
+          "settings": {
+            "placement": "on_image",
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "collection_card_gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0
+          },
+          "blocks": {
+            "collection_title_enafwL": {
+              "type": "collection-title",
+              "name": "t:names.collection_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#ffffff",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 4,
+                "padding-inline-start": 8,
+                "padding-inline-end": 8
+              },
+              "blocks": {}
+            },
+            "collection-card-image": {
+              "type": "_collection-card-image",
+              "name": "t:names.collection_card_image",
+              "static": true,
+              "settings": {
+                "image_ratio": "adapt",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "collection_title_enafwL"
+          ]
+        }
+      },
+      "block_order": [
+        "group_zLUzAy"
+      ],
+      "name": "t:names.collections_grid",
+      "settings": {
+        "collection_list": [],
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "columns": 3,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "bento_gap": 8,
+        "rows_gap": 8,
+        "max_collections": 4,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 12,
+        "color_scheme": "",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "section_pFPWFt": {
+      "type": "section",
+      "blocks": {
+        "ai_gen_block_daa91fe_CDh6Ah": {
+          "type": "ai_gen_block_daa91fe",
+          "settings": {
+            "image": "shopify://shop_images/Thez-trusted-us_0002_images-copy.png",
+            "title": "Holographic Display",
+            "description": "Experience the future with our stunning holographic technology",
+            "card_width": 350,
+            "card_height": 400,
+            "border_radius": 16,
+            "content_padding": 30,
+            "show_rainbow_border": true,
+            "background_color": "#1a1a2e",
+            "text_color": "#ffffff",
+            "gradient_color_1": "#667eea",
+            "gradient_color_2": "#764ba2",
+            "gradient_color_3": "#f093fb",
+            "holographic_intensity": 60,
+            "image_size": 100,
+            "title_size": 24,
+            "description_size": 16
+          },
+          "blocks": {}
         },
         "icon_ykdXEh": {
           "type": "icon",
@@ -148,6 +277,18 @@
             "icon": "price_tag",
             "image_upload": "shopify://shop_images/Thez-trusted-us_0003_Zrzut-ekranu-2023-04-12-o-13.28.47.png",
             "width": 40,
+            "link": "",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_meFGDk": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/Thez_trusted_us.png",
+            "width": 24,
             "link": "",
             "open_in_new_tab": false
           },
@@ -239,8 +380,9 @@
         }
       },
       "block_order": [
-        "group_t6GcVK",
+        "ai_gen_block_daa91fe_CDh6Ah",
         "icon_ykdXEh",
+        "icon_meFGDk",
         "icon_6JhVyK",
         "icon_KyLTJh",
         "icon_ytVgDi",
@@ -1033,6 +1175,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "collection_list_g8GDzg",
     "section_pFPWFt",
     "collection_list_zPLJEf",
     "section_pa8cRy",
