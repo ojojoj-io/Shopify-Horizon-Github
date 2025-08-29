@@ -108,14 +108,6 @@
           "greeting_message": ""
         }
       },
-      "8315608621410374781": {
-        "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
-        "disabled": false,
-        "settings": {
-          "custom_liquid_css": "",
-          "custom_liquid_js": ""
-        }
-      },
       "13392549970259155148": {
         "type": "shopify://apps/xo-insert-code/blocks/insert-code-header/72017b12-3679-442e-b23c-5c62460717f5",
         "disabled": true,
@@ -134,9 +126,17 @@
           "custom_js": ""
         }
       },
+      "8315608621410374781": {
+        "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
+        "disabled": true,
+        "settings": {
+          "custom_liquid_css": "",
+          "custom_liquid_js": ""
+        }
+      },
       "9741741230116411038": {
         "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     },
