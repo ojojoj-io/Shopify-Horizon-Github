@@ -81,10 +81,10 @@
         "padding-block-end": 72
       }
     },
-    "marquee_PL88zk": {
-      "type": "marquee",
+    "section_pFPWFt": {
+      "type": "section",
       "blocks": {
-        "icon_K3L9pr": {
+        "icon_d3ndgk": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -96,7 +96,7 @@
           },
           "blocks": {}
         },
-        "icon_JhVqAt": {
+        "icon_ykdXEh": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -108,7 +108,7 @@
           },
           "blocks": {}
         },
-        "icon_bdX9mK": {
+        "icon_6JhVyK": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -120,7 +120,7 @@
           },
           "blocks": {}
         },
-        "icon_N6d7G4": {
+        "icon_KyLTJh": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -132,7 +132,7 @@
           },
           "blocks": {}
         },
-        "icon_ATUe9n": {
+        "icon_ytVgDi": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -144,7 +144,7 @@
           },
           "blocks": {}
         },
-        "icon_pTtp8K": {
+        "icon_KTw9HF": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -156,7 +156,7 @@
           },
           "blocks": {}
         },
-        "icon_xRGmbN": {
+        "icon_aecmtY": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -168,7 +168,7 @@
           },
           "blocks": {}
         },
-        "icon_UrUQBR": {
+        "icon_bhEPre": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -180,7 +180,7 @@
           },
           "blocks": {}
         },
-        "icon_EqDkbP": {
+        "icon_mrTBEe": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
@@ -194,23 +194,43 @@
         }
       },
       "block_order": [
-        "icon_K3L9pr",
-        "icon_JhVqAt",
-        "icon_bdX9mK",
-        "icon_N6d7G4",
-        "icon_ATUe9n",
-        "icon_pTtp8K",
-        "icon_xRGmbN",
-        "icon_UrUQBR",
-        "icon_EqDkbP"
+        "icon_d3ndgk",
+        "icon_ykdXEh",
+        "icon_6JhVyK",
+        "icon_KyLTJh",
+        "icon_ytVgDi",
+        "icon_KTw9HF",
+        "icon_aecmtY",
+        "icon_bhEPre",
+        "icon_mrTBEe"
       ],
-      "name": "t:names.marquee_section",
+      "name": "t:names.custom_section",
       "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "scheme-1",
-        "padding-block-start": 60,
-        "padding-block-end": 40,
-        "gap_between_elements": 60
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "collection_list_zPLJEf": {
@@ -968,7 +988,7 @@
   },
   "order": [
     "hero_jVaWmY",
-    "marquee_PL88zk",
+    "section_pFPWFt",
     "collection_list_zPLJEf",
     "section_pa8cRy",
     "collection_list_NxFaUy",
