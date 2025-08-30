@@ -159,17 +159,18 @@
                   "settings": {
                     "product": "{{closest.product}}"
                   }
+                },
+                "pify_size_charts_size_guides_size_chart_inline_button_jgQ9CU": {
+                  "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-inline-button/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
+                  "settings": {}
                 }
               },
               "block_order": [
                 "product_title_eYVzTU",
                 "price_tVjtKg",
-                "omnibus_insight_price_tracker_am_omnibus_price_cndV7w"
+                "omnibus_insight_price_tracker_am_omnibus_price_cndV7w",
+                "pify_size_charts_size_guides_size_chart_inline_button_jgQ9CU"
               ]
-            },
-            "pify_size_charts_size_guides_size_chart_inline_block_9BAYGF": {
-              "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-inline-block/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
-              "settings": {}
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -497,7 +498,6 @@
           },
           "block_order": [
             "group_icgrde",
-            "pify_size_charts_size_guides_size_chart_inline_block_9BAYGF",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
