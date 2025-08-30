@@ -1,6 +1,9 @@
 {
     "recommendations": [
         "gxl.git-graph-3",
-        "figma.figma-vscode-extension"
+        "figma.figma-vscode-extension",
+        "github.vscode-pull-request-github",
+        "mquandalle.graphql",
+        "esbenp.prettier-vscode"
     ]
 }
