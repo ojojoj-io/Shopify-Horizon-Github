@@ -167,6 +167,10 @@
                 "omnibus_insight_price_tracker_am_omnibus_price_cndV7w"
               ]
             },
+            "pify_size_charts_size_guides_size_chart_inline_block_9BAYGF": {
+              "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-inline-block/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
+              "settings": {}
+            },
             "divider_VJhene": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -267,10 +271,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "pify_size_charts_size_guides_size_chart_inline_button_Fm4xcH": {
-                  "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-inline-button/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
-                  "settings": {}
-                },
                 "accordion_jKGJEy": {
                   "type": "accordion",
                   "name": "t:names.accordion",
@@ -491,13 +491,13 @@
                 }
               },
               "block_order": [
-                "pify_size_charts_size_guides_size_chart_inline_button_Fm4xcH",
                 "accordion_jKGJEy"
               ]
             }
           },
           "block_order": [
             "group_icgrde",
+            "pify_size_charts_size_guides_size_chart_inline_block_9BAYGF",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
