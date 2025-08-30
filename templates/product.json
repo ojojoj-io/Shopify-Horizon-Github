@@ -138,7 +138,7 @@
                     "show_sale_price_first": true,
                     "show_installments": true,
                     "show_tax_info": true,
-                    "type_preset": "h4",
+                    "type_preset": "paragraph",
                     "width": "100%",
                     "alignment": "left",
                     "font": "var(--font-body--family)",
@@ -156,7 +156,6 @@
                 },
                 "omnibus_insight_price_tracker_am_omnibus_price_cndV7w": {
                   "type": "shopify://apps/omnibus-insight-price-tracker/blocks/am-omnibus-price/bbd11345-5020-46a7-ac9f-70443833fce9",
-                  "disabled": true,
                   "settings": {
                     "product": "{{closest.product}}"
                   }
