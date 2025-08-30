@@ -45,7 +45,7 @@
     "type_line_height_h6": "display-loose",
     "page_width": "narrow",
     "page_transition_enabled": false,
-    "transition_to_main_product": false,
+    "transition_to_main_product": true,
     "card_hover_effect": "none",
     "badge_position": "top-right",
     "badge_corner_radius": 100,
@@ -116,11 +116,6 @@
           "custom_css": "",
           "custom_js": ""
         }
-      },
-      "9741741230116411038": {
-        "type": "shopify://apps/optis-color-swatch/blocks/bss-se-script/ad128d8f-5ebd-45ad-954a-7dd4c4226109",
-        "disabled": true,
-        "settings": {}
       },
       "8315608621410374781": {
         "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
