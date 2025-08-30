@@ -12,24 +12,6 @@
     "main": {
       "type": "product-information",
       "blocks": {
-        "smartsize_ai_fit_recommender_smartsize_recommender_YmHMa7": {
-          "type": "shopify://apps/smartsize-ai-fit-recommender/blocks/smartsize-recommender/b756010c-643b-4084-bf2f-97a8df367547",
-          "settings": {
-            "smartrecom_button_label": "Find my size",
-            "smartrecom_recommendation_text": "Your size is [[recommendedSize]]",
-            "button_style": "button",
-            "smartrecom_button_icon": "ruler_grey",
-            "smartrecom_button_text_color": "#ffffff",
-            "smartrecom_button_background_color": "#000000",
-            "button_horizontal_alignment_desktop": "left",
-            "button_horizontal_alignment_mobile": "left",
-            "smartrecom_accent_color": "#000000",
-            "show_support_link": false,
-            "smartrecom_support_link__label": "Not sure? Email us — we'll help you choose the right size.",
-            "smartrecom_support_link_url": "mailto:support@your-store.com",
-            "button_mode": "default"
-          }
-        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -62,7 +44,7 @@
           "type": "_product-details",
           "static": true,
           "settings": {
-            "width": "fill",
+            "width": "custom",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
@@ -233,6 +215,24 @@
               },
               "block_order": []
             },
+            "smartsize_ai_fit_recommender_smartsize_recommender_DRGxaQ": {
+              "type": "shopify://apps/smartsize-ai-fit-recommender/blocks/smartsize-recommender/b756010c-643b-4084-bf2f-97a8df367547",
+              "settings": {
+                "smartrecom_button_label": "Find my size",
+                "smartrecom_recommendation_text": "Your size is [[recommendedSize]]",
+                "button_style": "button",
+                "smartrecom_button_icon": "ruler_grey",
+                "smartrecom_button_text_color": "#ffffff",
+                "smartrecom_button_background_color": "#000000",
+                "button_horizontal_alignment_desktop": "center",
+                "button_horizontal_alignment_mobile": "center",
+                "smartrecom_accent_color": "#ffffff",
+                "show_support_link": false,
+                "smartrecom_support_link__label": "Not sure? Email us — we'll help you choose the right size.",
+                "smartrecom_support_link_url": "mailto:support@your-store.com",
+                "button_mode": "default"
+              }
+            },
             "group_BPTeyG": {
               "type": "group",
               "name": "t:names.group",
@@ -247,7 +247,7 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
-                "width": "fill",
+                "width": "custom",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -501,13 +501,11 @@
             "group_icgrde",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "smartsize_ai_fit_recommender_smartsize_recommender_DRGxaQ",
             "group_BPTeyG"
           ]
         }
       },
-      "block_order": [
-        "smartsize_ai_fit_recommender_smartsize_recommender_YmHMa7"
-      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
