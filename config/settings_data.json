@@ -121,14 +121,6 @@
           "custom_js": ""
         }
       },
-      "8315608621410374781": {
-        "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
-        "disabled": true,
-        "settings": {
-          "custom_liquid_css": "",
-          "custom_liquid_js": ""
-        }
-      },
       "14391867418331573003": {
         "type": "shopify://apps/goalify/blocks/progress-bar-embed/0834dd64-6591-4dfa-9cc4-bbb7ef032eed",
         "disabled": true,
@@ -146,6 +138,14 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": true,
         "settings": {}
+      },
+      "8315608621410374781": {
+        "type": "shopify://apps/pify-size-charts-size-guides/blocks/size-chart-app-embed/6acea2e6-5389-4b9c-9a1f-ae00732bccb4",
+        "disabled": true,
+        "settings": {
+          "custom_liquid_css": "",
+          "custom_liquid_js": ""
+        }
       }
     },
     "color_schemes": {
