@@ -153,11 +153,18 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "omnibus_insight_price_tracker_am_omnibus_price_3mWMEx": {
+                  "type": "shopify://apps/omnibus-insight-price-tracker/blocks/am-omnibus-price/bbd11345-5020-46a7-ac9f-70443833fce9",
+                  "settings": {
+                    "product": "{{closest.product}}"
+                  }
                 }
               },
               "block_order": [
                 "product_title_eYVzTU",
-                "price_tVjtKg"
+                "price_tVjtKg",
+                "omnibus_insight_price_tracker_am_omnibus_price_3mWMEx"
               ]
             },
             "divider_VJhene": {
