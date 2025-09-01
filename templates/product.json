@@ -218,6 +218,7 @@
             "group_3L3TYC": {
               "type": "group",
               "name": "t:names.group",
+              "disabled": true,
               "settings": {
                 "link": "",
                 "open_in_new_tab": false,
