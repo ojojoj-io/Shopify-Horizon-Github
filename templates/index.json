@@ -107,34 +107,11 @@
           },
           "blocks": {}
         },
-        "image_AJiaYL": {
+        "image_yjLXYH": {
           "type": "image",
           "name": "t:names.image",
           "settings": {
-            "image": "shopify://shop_images/Thez-trusted-us_0003_Zrzut-ekranu-2023-04-12-o-13.28.47.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "image_cqMUA3": {
-          "type": "image",
-          "name": "t:names.image",
-          "settings": {
-            "image": "shopify://shop_images/Thez-trusted-us_0002_images-copy.png",
+            "image": "shopify://shop_images/Thez-trusted-us_0007_351-3513226_welcome-to-the-land-of-the-sky-the_png.png",
             "link": "",
             "image_ratio": "adapt",
             "width": "fill",
@@ -222,29 +199,6 @@
           },
           "blocks": {}
         },
-        "image_yjLXYH": {
-          "type": "image",
-          "name": "t:names.image",
-          "settings": {
-            "image": "shopify://shop_images/Thez-trusted-us_0007_351-3513226_welcome-to-the-land-of-the-sky-the_png.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "image_cEFbrq": {
           "type": "image",
           "name": "t:names.image",
@@ -267,17 +221,39 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "image_cqMUA3": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/Thez-trusted-us_0000_Logo-i-fly_63cf2e1b-a63b-4218-ba02-6bf1ff05f31f.png",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "image_BjqQDc",
-        "image_AJiaYL",
-        "image_cqMUA3",
+        "image_yjLXYH",
         "image_GrhDqf",
         "image_daHwfB",
         "image_TfHWwj",
-        "image_yjLXYH",
-        "image_cEFbrq"
+        "image_cEFbrq",
+        "image_cqMUA3"
       ],
       "name": "t:names.custom_section",
       "settings": {
