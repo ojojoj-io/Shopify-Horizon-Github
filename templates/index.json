@@ -390,9 +390,9 @@
       "settings": {
         "collection_list": [
           "women-tops",
-          "bags-backpacks",
-          "beanies",
-          "420"
+          "mens",
+          "gift-card",
+          "t-shirts-1"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
@@ -804,13 +804,13 @@
       "name": "t:names.collections_bento",
       "settings": {
         "collection_list": [
-          "mens",
           "hoodies",
           "leggings",
-          "stickers",
-          "t-shirts-1",
           "socks",
           "jackets-vests",
+          "stickers",
+          "beanies",
+          "bags-backpacks",
           "pants-shorts"
         ],
         "layout_type": "grid",
