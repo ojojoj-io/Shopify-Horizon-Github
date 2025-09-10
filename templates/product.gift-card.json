@@ -16,7 +16,7 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
+            "media_presentation": "carousel",
             "media_columns": "one",
             "image_gap": 4,
             "large_first_image": false,
@@ -26,10 +26,9 @@
             "thumbnail_position": "bottom",
             "thumbnail_width": 72,
             "aspect_ratio": "adapt",
-            "constrain_to_viewport": true,
-            "media_fit": "contain",
             "media_radius": 0,
             "extend_media": false,
+            "constrain_to_viewport": true,
             "zoom": true,
             "video_loop": false,
             "hide_variants": true,
@@ -155,7 +154,7 @@
                   "blocks": {}
                 },
                 "omnibus_insight_price_tracker_am_omnibus_price_3mWMEx": {
-                  "type": "shopify://apps/omnibus-insight-price-tracker/blocks/am-omnibus-price/bbd11345-5020-46a7-ac9f-70443833fce9",
+                  "type": "shopify://apps/omnibus-insight/blocks/am-omnibus-price/bbd11345-5020-46a7-ac9f-70443833fce9",
                   "settings": {
                     "product": "{{closest.product}}"
                   }
